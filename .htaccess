@@ -1,0 +1,25 @@
+AddDefaultCharset utf-8
+
+SetEnvIf Request_URI ^/admin.* require_auth=true
+
+AuthUserFile /server_root/bookslist/views/admin/.htpasswd
+AuthName "Password Protected"
+AuthType Basic
+ErrorDocument 401 "Authorisation Required"
+
+Order Deny,Allow
+Deny from all
+Satisfy any
+Require valid-user
+Allow from env=!require_auth
+
+RewriteEngine on
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php
+
+
+
