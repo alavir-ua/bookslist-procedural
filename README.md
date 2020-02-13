@@ -44,4 +44,4 @@ define('SITE_URL', 'SITE_URL');
 Open a web browser and launch the application according to your settings.
 
 ## Links
-[Live Demo](http://bookslist.is-best.net/)
+[Live Demo](http://bookslist.is-best.net)
